@@ -42,7 +42,7 @@ brew install python3
 b. Clonando o Repositório
 Se você estiver rodando o código em um repositório Git, clone o repositório na máquina virtual:
 
-git clone https://github.com/MauroSantosIf/AgilStore.git)
+git clone https://github.com/MauroSantosIf/AgilStore.git
 
 c. Criar um Ambiente Virtual (opcional, mas recomendado)
 ## Para isolar as dependências, crie um ambiente virtual:
