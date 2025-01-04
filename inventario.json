@@ -1,0 +1,9 @@
+[
+    {
+        "id": "1",
+        "nome": "Smartphone",
+        "categoria": "EletroEletr\u00f4nico",
+        "quantidade": 10,
+        "preco": 5000.0
+    }
+]
