@@ -79,7 +79,7 @@ Os produtos são armazenados em um arquivo JSON chamado inventario.json. O forma
     "quantidade": 20,
     "preco": 2999.99
   }
-]~~~
+] ~~~
 
 # Exemplo de Uso
 Adicionar Produto: O usuário pode cadastrar novos produtos inserindo os dados como nome, categoria, quantidade e preço.
