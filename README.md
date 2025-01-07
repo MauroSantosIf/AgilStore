@@ -64,7 +64,7 @@ A aplicação lê e escreve em um arquivo inventario.json na mesma pasta, garant
 ## Formato de Armazenamento
 Os produtos são armazenados em um arquivo JSON chamado inventario.json. O formato de cada produto no arquivo é o seguinte:
 
-~[
+[
   {
     "id": "1",
     "nome": "Smartphone XYZ",
@@ -79,7 +79,7 @@ Os produtos são armazenados em um arquivo JSON chamado inventario.json. O forma
     "quantidade": 20,
     "preco": 2999.99
   }
-]~
+]
 
 # Exemplo de Uso
 Adicionar Produto: O usuário pode cadastrar novos produtos inserindo os dados como nome, categoria, quantidade e preço.
