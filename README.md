@@ -1,71 +1,104 @@
-# AgilStore - Gerenciamento de Inventário
+# Gerenciamento de Inventário
 
-O AgilStore é uma aplicação para gerenciamento de inventário de produtos de uma loja de eletrônicos. Ela permite realizar operações como adicionar, listar, buscar, excluir, atualizar e ordenar produtos, além de manter um controle eficiente do estoque utilizando um arquivo JSON para persistência dos dados.
+## Visão Geral do Projeto
 
-Funcionalidades
-Adicionar Produto: Cadastro de novos produtos com informações como nome, categoria, quantidade e preço.
-Listar Produtos: Exibe todos os produtos do inventário com suas informações.
-Filtrar por Categoria: Exibe produtos de uma categoria específica.
-Ordenar Produtos: Ordena os produtos por nome, quantidade ou preço.
-Atualizar Produto: Permite atualizar as informações de um produto existente.
-Excluir Produto: Remove um produto do inventário.
-Buscar Produto: Pesquisa produtos por ID ou por parte do nome.
-Requisitos
-Python 3.x
-Sistema operacional: Pode ser rodado em qualquer sistema operacional com suporte para Python (Windows, Linux, macOS).
-# Instalação e Execução
-1. Instalar o Python
-Certifique-se de ter o Python 3.x instalado em sua máquina. Caso não tenha, faça o download e instale-o a partir do site oficial do Python.
+Este projeto tem como objetivo gerenciar um inventário de produtos, permitindo adicionar, listar, buscar, atualizar, excluir e ordenar produtos. Os dados são armazenados em um arquivo JSON, garantindo persistência entre execuções.
 
-2. Preparando o Ambiente
-Se você estiver usando uma máquina virtual (como o VirtualBox ou VMware) e quiser rodar o código dentro dessa VM, siga os seguintes passos:
+## Demandas Encontradas no Estabelecimento
 
-a. Instalar o Python na Máquina Virtual
-Verifique se o Python está instalado executando o seguinte comando:
+As principais necessidades identificadas para o desenvolvimento deste projeto foram:
 
-python3 --version
-Caso não esteja instalado, use o gerenciador de pacotes do seu sistema para instalá-lo.
+Falta de um controle eficiente de estoque.
 
-## Para Ubuntu/Debian:
+Dificuldade em localizar produtos rapidamente.
 
-sudo apt update
-sudo apt install python3
+Necessidade de categorizar produtos.
 
-## Para CentOS/RHEL:
+Falta de um histórico atualizado dos produtos.
 
-sudo yum install python3
+Necessidade de ordenação e filtragem para melhor gestão.
 
-## Para macOS com Homebrew:
+## Objetivos do Projeto
 
-brew install python3
+Criar um sistema simples e funcional para gestão de inventário.
 
-b. Clonando o Repositório
-Se você estiver rodando o código em um repositório Git, clone o repositório na máquina virtual:
+Permitir a adição e remoção de produtos.
 
-git clone https://github.com/MauroSantosIf/AgilStore.git
+Implementar busca eficiente por ID e nome.
 
-c. Criar um Ambiente Virtual (opcional, mas recomendado)
-## Para isolar as dependências, crie um ambiente virtual:
+Possibilitar a organização dos produtos por categoria, quantidade e preço.
 
-python3 -m venv venv
-source venv/bin/activate  # Para Linux/macOS
-venv\Scripts\activate     # Para Windows
+Garantir a persistência dos dados utilizando arquivos JSON.
 
-3. Rodando o Código
-Com o ambiente configurado, basta executar o script Python para iniciar o gerenciamento de inventário:
+Criar uma interface de terminal amigável para o usuário.
 
-python3 store.py
+## Requisitos Desenvolvidos
 
-4. Interação com a Aplicação
-Ao rodar o código, o menu principal será exibido.
-Você poderá escolher as opções interativas para adicionar, listar, buscar, atualizar, excluir ou ordenar os produtos.
-A aplicação lê e escreve em um arquivo inventario.json na mesma pasta, garantindo que os dados sejam persistidos.
+Cadastro de produtos: O sistema permite a inserção de novos produtos, exigindo informações como nome, categoria, quantidade e preço.
+
+Listagem de produtos: Exibe os produtos em formato de tabela.
+
+Busca de produtos: Permite buscar um produto por ID ou nome.
+
+Filtragem por categoria: Usuários podem visualizar produtos de uma categoria específica.
+
+Ordenação: Os produtos podem ser ordenados por nome, quantidade ou preço.
+
+Atualização de produtos: O sistema permite a edição dos atributos de um produto.
+
+Exclusão de produtos: O usuário pode remover um produto com base em seu ID.
+
+Persistência de dados: Os produtos são armazenados em um arquivo JSON para garantir que os dados não sejam perdidos após o encerramento do programa.
+
+## Funcionalidades Atendidas
+
+O sistema atendeu aos seguintes requisitos:
+
+Controle eficiente de estoque.
+
+Facilidade na busca por produtos.
+
+Possibilidade de organizar e filtrar produtos de maneira intuitiva.
+
+Persistência de dados por meio de armazenamento em JSON.
+
+Interface amigável via terminal.
+
+## Estruturas Utilizadas no Código
+
+Classe Produto: Representa cada item no inventário.
+
+Listas: Armazena os produtos carregados do JSON e manipula os mesmos.
+
+Dicionários: Usados para armazenar as informações dos produtos no formato JSON.
+
+### Funções:
+
+carregar_produtos(): Lê e carrega os produtos do arquivo JSON.
+
+salvar_produtos(): Salva os produtos no arquivo JSON.
+
+adicionar_produto(): Solicita ao usuário informações e adiciona um novo produto.
+
+listar_produtos(): Exibe os produtos cadastrados.
+
+buscar_produto(): Realiza busca por ID ou nome.
+
+filtrar_por_categoria(): Permite visualizar apenas os produtos de uma categoria.
+
+ordenar_produtos(): Ordena os produtos por critérios escolhidos pelo usuário.
+
+atualizar_produto(): Permite alterar informações de um produto.
+
+excluir_produto(): Remove um produto com base em seu ID.
+
+gerenciar_inventario(): Função principal que executa o sistema e gerencia as opções do usuário.
 
 ## Formato de Armazenamento
+
 Os produtos são armazenados em um arquivo JSON chamado inventario.json. O formato de cada produto no arquivo é o seguinte:
 
-~~~
-[
+~~~[
   {
     "id": "1",
     "nome": "Smartphone XYZ",
@@ -80,23 +113,21 @@ Os produtos são armazenados em um arquivo JSON chamado inventario.json. O forma
     "quantidade": 20,
     "preco": 2999.99
   }
-] 
+]
 ~~~
 
-# Exemplo de Uso
-Adicionar Produto: O usuário pode cadastrar novos produtos inserindo os dados como nome, categoria, quantidade e preço.
+## Como Executar o Projeto
 
-1-Listar Produtos: Exibe todos os produtos cadastrados no inventário.
+Certifique-se de ter o Python instalado em seu sistema.
 
-2-Filtrar por Categoria: Mostra todos os produtos de uma categoria específica.
+Salve o arquivo do código como inventario.py.
 
-3-Ordenar Produtos: Permite ordenar os produtos por nome, quantidade ou preço.
+Execute o comando no terminal:
+~~~
+python inventario.py
+~~~
+Navegue pelas opções do menu interativo para gerenciar seu inventário.
 
-4-Buscar Produto: O usuário pode buscar produtos por ID ou nome, exibindo informações detalhadas.
+## Conclusão
 
-5-Atualizar Produto: Permite alterar informações como nome, categoria, quantidade ou preço de um produto.
-
-6-Excluir Produto: Remove um produto do inventário, após confirmação.
-
-Contribuição
-Sinta-se à vontade para contribuir com melhorias no código. Você pode enviar pull requests ou abrir issues para discutir novos recursos ou corrigir problemas.
+Este projeto oferece um sistema funcional para controle de inventário utilizando Python e arquivos JSON. Ele é fácil de usar, escalável e pode ser adaptado para diferentes necessidades de gestão de estoque.
